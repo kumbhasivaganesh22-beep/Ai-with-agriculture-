@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 390" role="img">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#edf3ee"/>
+      <stop offset="1" stop-color="#e7eff0"/>
+    </linearGradient>
+    <linearGradient id="soil" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#ae8b68"/>
+      <stop offset="1" stop-color="#775d49"/>
+    </linearGradient>
+  </defs>
+  <rect width="720" height="390" rx="22" fill="url(#bg)"/>
+  <circle cx="600" cy="66" r="29" fill="#f0d998" opacity=".76"/>
+  <path d="M0 236q180-30 360 0t360 0v66H0z" fill="#91a977"/>
+  <path d="M0 292h720v98H0z" fill="url(#soil)"/>
+  <path d="M0 307q180-25 360 0t360 0" fill="none" stroke="#d0b087" stroke-width="6"/>
+  <path d="M0 340h720M0 366h720" stroke="#c09a70" stroke-width="3" opacity=".45"/>
+  <g fill="none" stroke="#41683e" stroke-linecap="round" stroke-width="6">
+    <path d="M174 286v-77m0 49-24-20m24 10 24-23M352 286v-89m0 62-26-22m26 9 26-25M531 286v-78m0 51-24-20m24 10 25-24"/>
+  </g>
+  <g fill="#64884e">
+    <ellipse cx="151" cy="231" rx="17" ry="7" transform="rotate(38 151 231)"/>
+    <ellipse cx="192" cy="220" rx="18" ry="7" transform="rotate(-40 192 220)"/>
+    <ellipse cx="328" cy="231" rx="18" ry="7" transform="rotate(39 328 231)"/>
+    <ellipse cx="374" cy="218" rx="19" ry="7" transform="rotate(-40 374 218)"/>
+    <ellipse cx="507" cy="230" rx="18" ry="7" transform="rotate(37 507 230)"/>
+    <ellipse cx="552" cy="221" rx="18" ry="7" transform="rotate(-40 552 221)"/>
+  </g>
+  <g fill="none" stroke="#477e90" stroke-linecap="round" stroke-width="5">
+    <path d="M74 281h576"/>
+    <path d="M174 284v7m178-7v7m179-7v7" stroke-width="4"/>
+    <path d="M174 299c-9 8-9 14 0 18 9-4 9-10 0-18Zm178 0c-9 8-9 14 0 18 9-4 9-10 0-18Zm179 0c-9 8-9 14 0 18 9-4 9-10 0-18Z" fill="#79b4c3" stroke="none"/>
+  </g>
+  <g fill="none" stroke="#b8a486" stroke-width="2" stroke-dasharray="4 6" opacity=".8">
+    <path d="M150 321q24-21 48 0m130 0q24-21 48 0m131 0q24-21 48 0"/>
+    <path d="M161 333q13-11 26 0m167 0q13-11 26 0m168 0q13-11 26 0"/>
+  </g>
+  <path d="M31 37h216a17 17 0 0 1 17 17v37a17 17 0 0 1-17 17H31A17 17 0 0 1 14 91V54a17 17 0 0 1 17-17" fill="#fff" opacity=".9"/>
+  <path d="M42 61c-8 10-8 17 0 21 8-4 8-11 0-21Z" fill="#6da4b2"/>
+  <text x="59" y="68" fill="#3f5940" font-family="Arial,sans-serif" font-size="13" font-weight="700">WATER-WISE IRRIGATION</text>
+  <text x="59" y="87" fill="#788270" font-family="Arial,sans-serif" font-size="11">Match the system to soil, crop &amp; field</text>
+</svg>

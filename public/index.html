@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A practical growing companion for crop planning, plant health, water-wise irrigation, harvest timing, and agriculture expert support."
+    />
+    <meta name="theme-color" content="#f7f8f2" />
+    <title>Fieldnote — a growing companion</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Main navigation">
+        <a class="brand" href="#home" aria-label="Fieldnote home">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 32 32" fill="none">
+              <path d="M16 27V14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" />
+              <path d="M16 17c-7 0-10-4-10-10 7 0 11 3 11 9" fill="currentColor" opacity=".2" />
+              <path d="M16 17c-7 0-10-4-10-10 7 0 11 3 11 9" stroke="currentColor" stroke-width="2" stroke-linejoin="round" />
+              <path d="M17 13c0-5 3-8 9-8 0 6-3 10-9 10" fill="currentColor" opacity=".34" />
+              <path d="M17 13c0-5 3-8 9-8 0 6-3 10-9 10" stroke="currentColor" stroke-width="2" stroke-linejoin="round" />
+              <path d="M10 27h13" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" />
+            </svg>
+          </span>
+          <span class="brand-name">fieldnote<span>.</span></span>
+        </a>
+
+        <p class="nav-label">YOUR FARM</p>
+        <nav class="nav-list">
+          <a class="nav-link active" href="#home"><span class="nav-icon">⌂</span>Overview</a>
+          <a class="nav-link" href="#action-plan"><span class="nav-icon">✓</span>My action plan</a>
+          <a class="nav-link" href="#crop-planner"><span class="nav-icon">◈</span>Crop planner</a>
+          <a class="nav-link" href="#fertilizers"><span class="nav-icon">✿</span>Fertilizers</a>
+          <a class="nav-link" href="#plant-health"><span class="nav-icon">✳</span>Plant health</a>
+          <a class="nav-link" href="#water-plan"><span class="nav-icon">≈</span>Water plan</a>
+          <a class="nav-link" href="#technology"><span class="nav-icon">⌘</span>Farm technology</a>
+          <a class="nav-link" href="#harvest"><span class="nav-icon">◷</span>Harvest calendar</a>
+        </nav>
+
+        <div class="sidebar-bottom">
+          <div class="season-card">
+            <span class="season-icon" aria-hidden="true">☀</span>
+            <div>
+              <p class="season-eyebrow">A LITTLE REMINDER</p>
+              <p class="season-copy">Healthy soil is the start of every good harvest.</p>
+            </div>
+          </div>
+          <button class="profile-button" type="button" data-open-expert>
+            <span class="profile-avatar">FN</span>
+            <span class="profile-details"><strong>New to farming?</strong><small>Talk to a real person</small></span>
+            <span class="profile-arrow" aria-hidden="true">↗</span>
+          </button>
+        </div>
+      </aside>
+
+      <main id="home" class="main-content">
+        <header class="topbar">
+          <div class="breadcrumb">Your growing space <span>/</span> <strong>Overview</strong></div>
+          <div class="topbar-actions">
+            <span class="today-label"><span class="status-dot"></span> A good day to grow</span>
+            <button class="icon-button" type="button" aria-label="Contact an agriculture expert" data-open-expert>?</button>
+          </div>
+        </header>
+
+        <div class="page-content">
+          <section class="welcome-row">
+            <div>
+              <p class="eyebrow">YOUR FARM, ONE STEP AT A TIME</p>
+              <h1>Let’s grow something <span>good.</span></h1>
+              <p class="welcome-copy">A little guidance goes a long way. Start with what you need today.</p>
+            </div>
+            <button class="button button-dark" type="button" data-open-expert>
+              <span aria-hidden="true">♧</span> Get agriculture help
+            </button>
+          </section>
+
+          <section class="hero-card" aria-label="Getting started">
+            <div class="hero-copy">
+              <span class="hero-kicker"><span class="hero-sparkle">✳</span> YOUR FIELD GUIDE</span>
+              <h2>Good farming starts<br />with good questions.</h2>
+              <p>Plan a crop, check a leaf, or figure out when to water. We’ll help you find your next step.</p>
+              <a class="hero-link" href="#crop-planner">Explore your growing guide <span aria-hidden="true">→</span></a>
+            </div>
+            <div class="hero-art" aria-hidden="true">
+              <div class="sun-disc"></div>
+              <div class="field field-back"></div>
+              <div class="field field-front"></div>
+              <div class="plant plant-one"><i></i><i></i><b></b></div>
+              <div class="plant plant-two"><i></i><i></i><b></b></div>
+              <div class="plant plant-three"><i></i><i></i><b></b></div>
+              <div class="art-sprout">✳</div>
+            </div>
+          </section>
+
+          <section class="section-heading">
+            <div>
+              <p class="eyebrow">YOUR FARM TOOLKIT</p>
+              <h2>What can we help with?</h2>
+            </div>
+            <span class="section-note">Choose a starting point</span>
+          </section>
+
+          <section class="tool-grid" aria-label="Farm tools">
+            <a class="tool-card action-tool" href="#action-plan">
+              <span class="tool-icon action-icon" aria-hidden="true">✓</span>
+              <span class="tool-title">What should I do next?</span>
+              <span class="tool-description">Bring your crop, soil, water, and plant details into one checklist.</span>
+              <span class="tool-action">Build my action plan <span aria-hidden="true">→</span></span>
+              <span class="tool-decoration action-decoration" aria-hidden="true">✓</span>
+            </a>
+            <a class="tool-card crop-tool" href="#crop-planner">
+              <img class="tool-image" src="assets/crop-field.svg" alt="Illustration of crop rows and cultivated soil" />
+              <span class="tool-icon crop-icon" aria-hidden="true">↗</span>
+              <span class="tool-title">What should I grow?</span>
+              <span class="tool-description">Find crop ideas that fit your soil, season, and water.</span>
+              <span class="tool-action">Plan a crop <span aria-hidden="true">→</span></span>
+              <span class="tool-decoration crop-decoration" aria-hidden="true">✳</span>
+            </a>
+            <a class="tool-card health-tool" href="#plant-health">
+              <span class="tool-icon health-icon" aria-hidden="true">⌕</span>
+              <span class="tool-title">Something wrong with a plant?</span>
+              <span class="tool-description">Take a clear photo and prepare a question for an expert.</span>
+              <span class="tool-action">Check plant health <span aria-hidden="true">→</span></span>
+              <span class="tool-decoration health-decoration" aria-hidden="true">✿</span>
+            </a>
+            <a class="tool-card water-tool" href="#water-plan">
+              <img class="tool-image" src="assets/water-wise-irrigation.svg" alt="Illustration of root-zone drip irrigation in a crop field" />
+              <span class="tool-icon water-icon" aria-hidden="true">≈</span>
+              <span class="tool-title">Use water more wisely</span>
+              <span class="tool-description">Explore irrigation approaches that help reduce water waste.</span>
+              <span class="tool-action">Build a water plan <span aria-hidden="true">→</span></span>
+              <span class="tool-decoration water-decoration" aria-hidden="true">◌</span>
+            </a>
+            <a class="tool-card harvest-tool" href="#harvest">
+              <span class="tool-icon harvest-icon" aria-hidden="true">◷</span>
+              <span class="tool-title">When will my crop be ready?</span>
+              <span class="tool-description">Make a simple harvest estimate from your planting date.</span>
+              <span class="tool-action">Check harvest timing <span aria-hidden="true">→</span></span>
+              <span class="tool-decoration harvest-decoration" aria-hidden="true">✳</span>
+            </a>
+            <a class="tool-card technology-tool" href="#technology">
+              <span class="tool-icon technology-icon" aria-hidden="true">⌘</span>
+              <span class="tool-title">Learn about farm technology</span>
+              <span class="tool-description">Explore practical tools and small steps to get started.</span>
+              <span class="tool-action">Explore the guide <span aria-hidden="true">→</span></span>
+              <span class="tool-decoration technology-decoration" aria-hidden="true">⌘</span>
+            </a>
+          </section>
+
+          <section class="expert-strip helpline-strip" aria-label="Kisan Call Center helpline">
+            <div class="expert-icon" aria-hidden="true">☎</div>
+            <div class="expert-text">
+              <p class="expert-title">Kisan Call Center <span class="helpline-region">India / Andhra Pradesh</span></p>
+              <p class="expert-description">Agriculture support in local languages · Daily, 6:00 AM–10:00 PM</p>
+            </div>
+            <div class="helpline-actions">
+              <a class="button button-outline" href="tel:18001801551" aria-label="Call Kisan Call Center at 1800 180 1551">1800-180-1551</a>
+              <a class="button button-outline" href="tel:1551" aria-label="Call Kisan Call Center at 1551">1551</a>
+            </div>
+          </section>
+
+          <section class="workspace-section" id="action-plan">
+            <div class="section-heading compact-heading">
+              <div><p class="eyebrow">TURN YOUR FARM DETAILS INTO NEXT STEPS</p><h2>Your farm action plan</h2></div>
+              <span class="section-note">A practical starting checklist — not a substitute for local advice</span>
+            </div>
+            <div class="action-plan-panel">
+              <div class="action-plan-intro">
+                <span class="large-tool-icon crop-icon" aria-hidden="true">✓</span>
+                <div>
+                  <h3>Tell us what is happening in your field.</h3>
+                  <p>Use details from your soil-test report if you have one. We’ll organize safe next steps for the crop, water, plant condition, and timing. Your location labels the plan; it does not provide location-specific forecasts or recommendations.</p>
+                </div>
+              </div>
+              <form id="action-plan-form" class="action-plan-form">
+                <label>Farm location
+                  <input name="location" type="text" placeholder="District, region, or nearest town" autocomplete="address-level2" required />
+                </label>
+                <label>Crop you are growing or considering
+                  <select name="crop" required>
+                    <option value="">Choose a crop</option>
+                    <option value="Rice">Rice</option><option value="Maize">Maize</option><option value="Tomato">Tomato</option><option value="Beans">Beans</option><option value="Wheat">Wheat</option><option value="Potato">Potato</option><option value="Other">Other / not listed</option>
+                  </select>
+                </label>
+                <label>Soil pH from test report
+                  <input name="ph" type="number" min="0" max="14" step="0.1" placeholder="Optional, e.g. 6.5" />
+                </label>
+                <label>Soil type
+                  <select name="soil" required>
+                    <option value="">Choose what you know</option><option value="loamy">Loamy</option><option value="sandy">Sandy</option><option value="clayey">Clayey</option><option value="unknown">Not sure</option>
+                  </select>
+                </label>
+                <label>Water availability
+                  <select name="water" required>
+                    <option value="">Choose an estimate</option><option value="limited">Limited / rainfall-dependent</option><option value="moderate">Some regular irrigation</option><option value="reliable">Reliable water supply</option>
+                  </select>
+                </label>
+                <label>Current crop growth stage
+                  <select name="stage" required>
+                    <option value="">Choose the stage</option><option value="Seedling / early growth">Seedling / early growth</option><option value="Vegetative growth">Vegetative growth</option><option value="Flowering">Flowering</option><option value="Fruiting / grain filling">Fruiting / grain filling</option><option value="Near harvest">Near harvest</option><option value="Not planted yet">Not planted yet</option>
+                  </select>
+                </label>
+                <label>Plant condition (if there is a concern)
+                  <select name="symptom">
+                    <option value="">No visible concern / not sure</option><option value="spots">Spots or patches on leaves</option><option value="yellowing">Yellowing leaves</option><option value="wilting">Wilting or drooping</option><option value="insects">Insects or visible damage</option><option value="other">Other change</option>
+                  </select>
+                </label>
+                <label>Planting date <span class="optional-label">(optional, for a broad harvest estimate)</span>
+                  <input name="plantingDate" type="date" />
+                </label>
+                <button class="button button-dark action-plan-submit" type="submit">Build my action plan <span aria-hidden="true">→</span></button>
+                <div id="action-plan-result" class="action-plan-result" aria-live="polite"></div>
+              </form>
+            </div>
+          </section>
+
+          <section class="workspace-section" id="crop-planner">
+            <div class="section-heading compact-heading">
+              <div><p class="eyebrow">A THOUGHTFUL FIRST STEP</p><h2>Find a crop that fits</h2></div>
+              <span class="section-note">A starting point, not a promise</span>
+            </div>
+            <div class="planner-panel">
+              <div class="planner-intro">
+                <span class="large-tool-icon crop-icon" aria-hidden="true">↗</span>
+                <h3>Start with your conditions.</h3>
+                <p>Enter the pH from your soil-test report to see crops whose broad preferred pH ranges include it. This is a first screening step, not a locally verified crop recommendation.</p>
+                <img class="topic-image crop-image" src="assets/crop-field.svg" alt="Crop rows growing in cultivated soil" loading="lazy" />
+                <div class="crop-photo-gallery" aria-label="Crop planning field photos">
+                  <figure class="crop-photo-card">
+                    <img src="assets/crop-planning/crop-row-inspection.png" alt="Farmers inspecting rows of growing crops in a field" loading="lazy" />
+                    <figcaption><strong>Inspect crop rows</strong><span>Observe crop growth and field conditions.</span></figcaption>
+                  </figure>
+                  <figure class="crop-photo-card">
+                    <img src="assets/crop-planning/farm-water-and-fields.png" alt="Farm plots beside a farm water reservoir" loading="lazy" />
+                    <figcaption><strong>Consider water access</strong><span>Plan with the available water source and local rules in mind.</span></figcaption>
+                  </figure>
+                  <figure class="crop-photo-card">
+                    <img src="assets/crop-planning/cultivated-crop-rows.png" alt="Rows of crops across a cultivated field" loading="lazy" />
+                    <figcaption><strong>Think about the whole field</strong><span>Soil, season, crop choice, and field layout all matter.</span></figcaption>
+                  </figure>
+                </div>
+                <div class="rule-checklist">
+                  <strong>Before choosing a crop</strong>
+                  <ul>
+                    <li>Check local planting-season and crop-suitability advice.</li>
+                    <li>Test soil and irrigation water where services are available.</li>
+                    <li>Consider seed availability, rotation, and a reliable market.</li>
+                    <li>Follow local seed, land-use, and environmental requirements.</li>
+                  </ul>
+                  <p>Rules and recommendations vary by location. Confirm them with your local agriculture office.</p>
+                </div>
+                <p class="fine-print">Crop pH ranges are approximate. A soil report’s nutrients, salinity, soil texture, climate, season, water, variety, and local rules also affect crop suitability.</p>
+              </div>
+              <form id="crop-form" class="input-grid">
+                <label>Where are you growing?<input name="location" type="text" placeholder="District, region, or nearest town" autocomplete="address-level2" required /></label>
+                <label>Soil pH from your test report
+                  <input name="ph" type="number" min="0" max="14" step="0.1" placeholder="For example, 6.5" required />
+                </label>
+                <label>What describes your soil best?
+                  <select name="soil" required>
+                    <option value="">Choose what you know</option>
+                    <option value="loamy">Loamy — crumbly and balanced</option>
+                    <option value="sandy">Sandy — gritty and drains quickly</option>
+                    <option value="clayey">Clayey — sticky when wet</option>
+                    <option value="unknown">I’m not sure yet</option>
+                  </select>
+                </label>
+                <label>How much water can you access?
+                  <select name="water" required>
+                    <option value="">Choose an estimate</option>
+                    <option value="limited">Limited or rainfall-dependent</option>
+                    <option value="moderate">Some regular irrigation</option>
+                    <option value="reliable">Reliable water supply</option>
+                  </select>
+                </label>
+                <button class="button button-dark form-submit" type="submit">Find crops for this pH <span aria-hidden="true">→</span></button>
+                <div id="crop-results" class="result-box" aria-live="polite"></div>
+              </form>
+            </div>
+          </section>
+
+          <section class="workspace-section" id="fertilizers">
+            <div class="section-heading compact-heading">
+              <div><p class="eyebrow">FEED THE CROP, NOT JUST THE CALENDAR</p><h2>Common fertilizers &amp; when they’re used</h2></div>
+              <span class="section-note">General guide — confirm with local advice</span>
+            </div>
+            <div class="fertilizer-panel">
+              <div class="fertilizer-intro">
+                <span class="large-tool-icon fertilizer-icon" aria-hidden="true">✿</span>
+                <div>
+                  <h3>Know what you’re applying.</h3>
+                  <p>Fertilizers supply plant nutrients, but the right product, amount, and timing depend on the crop, soil test, growth stage, and local recommendations.</p>
+                </div>
+              </div>
+              <div class="fertilizer-table-wrap" role="region" aria-label="Fertilizer composition and common uses" tabindex="0">
+                <table class="fertilizer-table">
+                  <thead>
+                    <tr>
+                      <th scope="col">Fertilizer</th>
+                      <th scope="col">Typical composition</th>
+                      <th scope="col">Main nutrients supplied</th>
+                      <th scope="col">Common timing / use</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">Urea</th>
+                      <td>CO(NH<sub>2</sub>)<sub>2</sub><br /><span>Usually 46% N</span></td>
+                      <td>Nitrogen</td>
+                      <td>Often applied in split doses during vegetative growth, as locally recommended.</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Ammonium sulfate</th>
+                      <td>(NH<sub>4</sub>)<sub>2</sub>SO<sub>4</sub><br /><span>Common grade: about 21% N, 24% S</span></td>
+                      <td>Nitrogen and sulfur</td>
+                      <td>Use only when indicated by the crop plan or soil test; its acidifying effect may matter on some soils.</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">CAN<br /><span>Calcium ammonium nitrate</span></th>
+                      <td>N fertilizer blend<br /><span>Common grades contain about 25–27% N; check the bag</span></td>
+                      <td>Nitrogen; calcium content varies by product</td>
+                      <td>May be used as a nitrogen source where recommended; timing and split applications depend on crop and local guidance.</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">DAP<br /><span>Di-ammonium phosphate</span></th>
+                      <td>(NH<sub>4</sub>)<sub>2</sub>HPO<sub>4</sub><br /><span>18% N, 46% P<sub>2</sub>O<sub>5</sub> (common grade)</span></td>
+                      <td>Nitrogen and phosphorus</td>
+                      <td>Often used as a basal fertilizer at sowing or planting, based on soil and crop recommendations.</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">SSP<br /><span>Single superphosphate</span></th>
+                      <td>Calcium phosphate + calcium sulfate<br /><span>Common grade: about 16% P<sub>2</sub>O<sub>5</sub>, 11% S, 19% Ca</span></td>
+                      <td>Phosphorus, sulfur, and calcium</td>
+                      <td>Often incorporated before planting or used as a basal source; check the guaranteed analysis on the bag.</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">MOP<br /><span>Muriate of potash</span></th>
+                      <td>KCl<br /><span>Usually about 60% K<sub>2</sub>O equivalent</span></td>
+                      <td>Potassium</td>
+                      <td>Timing varies by crop and soil; apply at the locally recommended stage, sometimes before planting or in splits.</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">SOP<br /><span>Sulfate of potash</span></th>
+                      <td>K<sub>2</sub>SO<sub>4</sub><br /><span>Common grade: about 50% K<sub>2</sub>O, 17–18% S</span></td>
+                      <td>Potassium and sulfur</td>
+                      <td>Use when indicated by crop needs and soil results; compare its label and cost with other potassium sources.</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Complex NPK<br /><span>19:19:19</span></th>
+                      <td>19% N – 19% P<sub>2</sub>O<sub>5</sub> – 19% K<sub>2</sub>O</td>
+                      <td>Nitrogen, phosphorus, and potassium</td>
+                      <td>Balanced grade sometimes used during early vegetative growth or early flowering when recommended for the crop.</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="fertilizer-gallery">
+                <figure class="fertilizer-image-card">
+                  <img src="assets/fertilizers/fertilizer-packaging.png" alt="Examples of agricultural fertilizer packaging in bags and smaller packages" loading="lazy" />
+                  <figcaption><strong>Agricultural product packaging</strong><span>Packaging styles vary. Read the product label for nutrient analysis, instructions, and safety information.</span></figcaption>
+                </figure>
+                <figure class="fertilizer-image-card">
+                  <img src="assets/fertilizers/fertilizer-product-bags.png" alt="Agricultural fertilizer and farm product bags, including a bag marked fertilizer" loading="lazy" />
+                  <figcaption><strong>Check the bag before use</strong><span>Confirm the fertilizer name, guaranteed composition, crop directions, and manufacturer on each product.</span></figcaption>
+                </figure>
+              </div>
+              <div class="fertilizer-calculator">
+                <div class="calculator-intro">
+                  <span class="calculator-tag">PER-ACRE CONVERTER</span>
+                  <h3>Convert a nutrient recommendation into fertilizer weight</h3>
+                  <p>Use the nutrient rate already recommended by your soil-test report or a qualified local advisor. This calculator does not decide which nutrient or dose your crop needs.</p>
+                </div>
+                <form id="fertilizer-form" class="fertilizer-calculator-form">
+                  <label>Crop
+                    <select name="crop" required>
+                      <option value="">Choose crop</option>
+                      <option>Rice</option><option>Maize</option><option>Tomato</option><option>Beans</option><option>Wheat</option><option>Potato</option><option>Other</option>
+                    </select>
+                  </label>
+                  <label>Fertilizer product
+                    <select name="product" required>
+                      <option value="">Choose product</option>
+                      <option value="urea">Urea</option>
+                      <option value="ammoniumsulfate">Ammonium sulfate (typical 21% N)</option>
+                      <option value="can">CAN (typical 26% N)</option>
+                      <option value="dap">DAP</option>
+                      <option value="ssp">SSP</option>
+                      <option value="mop">MOP</option>
+                      <option value="sop">SOP (typical 50% K₂O)</option>
+                      <option value="npk191919">NPK 19:19:19</option>
+                    </select>
+                  </label>
+                  <label>Nutrient rate already recommended
+                    <div class="nutrient-rate-input">
+                      <input name="rate" type="number" min="0.1" max="500" step="0.1" placeholder="e.g. 12" required />
+                      <span>kg nutrient / acre</span>
+                    </div>
+                  </label>
+                  <label>Nutrient basis
+                    <select name="nutrient" required>
+                      <option value="">Choose nutrient</option>
+                      <option value="N">Nitrogen (N)</option>
+                      <option value="P2O5">Phosphate (P<sub>2</sub>O<sub>5</sub>)</option>
+                      <option value="K2O">Potash (K<sub>2</sub>O)</option>
+                    </select>
+                  </label>
+                  <button class="button button-dark calculator-submit" type="submit">Calculate product kg per acre <span aria-hidden="true">→</span></button>
+                  <div id="fertilizer-result" class="result-box fertilizer-result" aria-live="polite"></div>
+                </form>
+                <p class="fine-print calculator-warning">Calculation: recommended nutrient kg/acre ÷ nutrient fraction on the product label. The amount is a math conversion only—not a crop recommendation. Check the exact guaranteed analysis, account for nutrients supplied together, follow the label and local rules, and ask a local agronomist about timing and safe application.</p>
+              </div>
+              <div class="fertilizer-safety">
+                <strong>Use safely:</strong> Follow the product label and local rules; base the choice and rate on a soil test and crop-specific advice. Wear the protective equipment listed on the label, keep fertilizers away from children and water sources, and don’t mix products unless the label or a qualified advisor says it is safe.
+              </div>
+              <p class="fine-print fertilizer-footnote">N–P<sub>2</sub>O<sub>5</sub>–K<sub>2</sub>O grades are label conventions, not elemental phosphorus and potassium percentages. Formulations can vary by manufacturer and region; the product label is authoritative.</p>
+            </div>
+          </section>
+
+          <section class="workspace-section" id="plant-health">
+            <div class="section-heading compact-heading">
+              <div><p class="eyebrow">LOOK CLOSER, THEN ASK</p><h2>Check on a plant</h2></div>
+              <span class="section-note">A photo helps an expert understand the problem</span>
+            </div>
+            <div class="health-panel">
+              <div class="health-copy">
+                <span class="large-tool-icon health-icon" aria-hidden="true">⌕</span>
+                <h3>Not sure what that spot means?</h3>
+                <p>Take a clear photo of the whole plant and the affected area. Choose the visible symptom to get safe first steps to check and prepare for an expert.</p>
+                <div class="health-reference-gallery" aria-label="Plant health photo references">
+                  <figure class="health-reference-card">
+                    <img src="assets/plant-health/field-photo-check.png" alt="A farmer using a phone or tablet to inspect a crop in the field" loading="lazy" />
+                    <figcaption><strong>Check plants in the field</strong><span>Photograph the affected plant and where it is growing.</span></figcaption>
+                  </figure>
+                  <figure class="health-reference-card">
+                    <img src="assets/plant-health/leaf-symptom-reference.png" alt="Reference collage comparing healthy leaves with several visible leaf symptoms" loading="lazy" />
+                    <figcaption><strong>Compare visible symptoms</strong><span>Similar-looking leaf changes can have different causes.</span></figcaption>
+                  </figure>
+                  <figure class="health-reference-card">
+                    <img src="assets/plant-health/plant-disease-reference.png" alt="Illustrated reference showing examples of plant disease symptoms" loading="lazy" />
+                    <figcaption><strong>Use references carefully</strong><span>A picture can guide observation, but cannot confirm a diagnosis.</span></figcaption>
+                  </figure>
+                </div>
+                <ul class="photo-tips"><li>Photograph in natural light</li><li>Include the whole plant and a close-up</li><li>Note when the symptoms first appeared</li></ul>
+                <div class="safety-note"><strong>Important:</strong> This prototype does not diagnose from images. Confirm the cause with a qualified local expert before applying any pesticide.</div>
+              </div>
+              <div class="upload-side">
+                <label class="upload-zone" for="plant-photo">
+                  <input id="plant-photo" type="file" accept="image/*" capture="environment" />
+                  <span class="upload-symbol" aria-hidden="true">↑</span>
+                  <strong>Add a plant photo</strong>
+                  <span>Take a photo or choose an image</span>
+                  <span class="upload-cta">Choose photo</span>
+                </label>
+                <div id="photo-preview" class="photo-preview" aria-live="polite"></div>
+                <label class="symptom-label" for="health-crop">Which crop is affected?</label>
+                <select id="health-crop">
+                  <option value="">Choose the crop</option>
+                  <option value="Rice">Rice</option>
+                  <option value="Maize">Maize</option>
+                  <option value="Tomato">Tomato</option>
+                  <option value="Beans">Beans</option>
+                  <option value="Wheat">Wheat</option>
+                  <option value="Potato">Potato</option>
+                  <option value="Other">Other / not listed</option>
+                </select>
+                <label class="symptom-label" for="health-stage">Current growth stage</label>
+                <select id="health-stage">
+                  <option value="">Choose the growth stage</option>
+                  <option value="Seedling / early growth">Seedling / early growth</option>
+                  <option value="Vegetative growth">Vegetative growth</option>
+                  <option value="Flowering">Flowering</option>
+                  <option value="Fruiting / grain filling">Fruiting / grain filling</option>
+                  <option value="Near harvest">Near harvest</option>
+                </select>
+                <label class="symptom-label" for="symptom">What are you noticing?</label>
+                <select id="symptom">
+                  <option value="">Choose the closest symptom</option>
+                  <option value="spots">Spots or patches on leaves</option>
+                  <option value="yellowing">Leaves turning yellow</option>
+                  <option value="wilting">Wilting or drooping</option>
+                  <option value="insects">Insects or visible damage</option>
+                  <option value="other">Something else</option>
+                </select>
+                <p class="photo-privacy">Your photo stays on this device; this prototype does not upload or analyze it.</p>
+                <button id="prepare-enquiry" class="button button-dark full-button" type="button">Check plant &amp; get next steps <span aria-hidden="true">→</span></button>
+                <p id="photo-status" class="inline-status" aria-live="polite"></p>
+              </div>
+            </div>
+          </section>
+
+          <section class="workspace-section" id="water-plan">
+            <div class="section-heading compact-heading">
+              <div><p class="eyebrow">EVERY DROP COUNTS</p><h2>Explore a water-wise approach</h2></div>
+              <span class="section-note">Match the method to your field</span>
+            </div>
+            <div class="water-panel">
+              <div class="water-intro">
+                <span class="large-tool-icon water-icon" aria-hidden="true">≈</span>
+                <h3>Start with how your field gets water.</h3>
+                <p>Different irrigation methods suit different crops, soils, budgets, and slopes. Select one to see what to ask before you invest.</p>
+                <img class="topic-image water-image" src="assets/water-wise-irrigation.svg" alt="Diagram of drip lines delivering water near crop roots" loading="lazy" />
+                <div class="rule-checklist">
+                  <strong>Before setting up irrigation</strong>
+                  <ul>
+                    <li>Check local water-use permits and any seasonal restrictions.</li>
+                    <li>Confirm your water source can support the planned use.</li>
+                    <li>Match the system to crop, soil, slope, and water quality.</li>
+                    <li>Plan for safe installation, filtration, maintenance, and runoff control.</li>
+                  </ul>
+                  <p>Local water rights, equipment standards, and farm rules may apply. Ask your local water authority or agriculture office.</p>
+                </div>
+              </div>
+              <div class="water-options">
+                <button class="water-option selected" type="button" data-method="drip">
+                  <span class="method-icon">⌁</span><span><strong>Drip irrigation</strong><small>Choose a drip-line arrangement</small></span><span class="option-arrow">→</span>
+                </button>
+                <div id="drip-types" class="drip-types" aria-label="Drip irrigation types">
+                  <p class="drip-types-title">DRIP OPTIONS</p>
+                  <button class="drip-type selected" type="button" data-drip-type="surface">Surface drip</button>
+                  <button class="drip-type" type="button" data-drip-type="subsurface">Subsurface drip</button>
+                  <button class="drip-type" type="button" data-drip-type="inline">Inline dripline</button>
+                </div>
+                <button class="water-option" type="button" data-method="sprinkler">
+                  <span class="method-icon">☼</span><span><strong>Sprinkler irrigation</strong><small>Apply water across a wider area</small></span><span class="option-arrow">→</span>
+                </button>
+                <button class="water-option" type="button" data-method="manual">
+                  <span class="method-icon">♧</span><span><strong>Manual irrigation</strong><small>Water by hand or with portable equipment</small></span><span class="option-arrow">→</span>
+                </button>
+                <button class="water-option" type="button" data-method="lateral">
+                  <span class="method-icon">↔</span><span><strong>Lateral move (linear)</strong><small>Move a sprinkler line across the field</small></span><span class="option-arrow">→</span>
+                </button>
+                <button class="water-option" type="button" data-method="pivot">
+                  <span class="method-icon">◉</span><span><strong>Center pivot</strong><small>Rotate a sprinkler system around a pivot</small></span><span class="option-arrow">→</span>
+                </button>
+                <button class="water-option" type="button" data-method="subirrigation">
+                  <span class="method-icon">↓</span><span><strong>Sub-irrigation</strong><small>Manage water below the soil surface</small></span><span class="option-arrow">→</span>
+                </button>
+                <button class="water-option" type="button" data-method="furrow">
+                  <span class="method-icon">≋</span><span><strong>Furrow irrigation</strong><small>Guide water between crop rows</small></span><span class="option-arrow">→</span>
+                </button>
+              </div>
+              <div class="water-detail" id="water-detail" aria-live="polite">
+                <span class="detail-label">A GOOD QUESTION TO ASK</span>
+                <p id="water-detail-copy">Surface drip places tubing on the soil. Check crop spacing, evaporation exposure, filtration, pressure, and whether the lines can be protected and maintained.</p>
+                <span class="water-caution">Actual water needs depend on crop stage, local weather, soil, and system design.</span>
+              </div>
+            </div>
+            <div class="irrigation-gallery">
+              <div class="gallery-heading">
+                <p class="eyebrow">IRRIGATION IN THE FIELD</p>
+                <h3>See a few systems in action</h3>
+              </div>
+              <div class="irrigation-image-grid">
+                <figure class="irrigation-image-card">
+                  <img src="assets/irrigation/irrigation-methods.png" alt="Illustrated comparison of sprinkler, drip, surge, and flood irrigation methods" loading="lazy" />
+                  <figcaption><strong>Different ways to irrigate</strong><span>Overview of drip, sprinkler, surge, and flood methods.</span></figcaption>
+                </figure>
+                <figure class="irrigation-image-card">
+                  <img src="assets/irrigation/sprinkler-field.png" alt="Sprinklers watering crop rows in a field" loading="lazy" />
+                  <figcaption><strong>Sprinkler irrigation</strong><span>Sprinklers apply water across crop rows.</span></figcaption>
+                </figure>
+                <figure class="irrigation-image-card">
+                  <img src="assets/irrigation/center-pivot.png" alt="Center-pivot irrigation equipment spraying water across a field" loading="lazy" />
+                  <figcaption><strong>Center-pivot irrigation</strong><span>A moving sprinkler system irrigates around a pivot point.</span></figcaption>
+                </figure>
+              </div>
+              <p class="fine-print gallery-note">Images show examples only. System choice depends on crop, field layout, soil, water supply, maintenance, and local water-use rules.</p>
+            </div>
+          </section>
+
+          <section class="workspace-section" id="technology">
+            <div class="section-heading compact-heading">
+              <div><p class="eyebrow">USEFUL TOOLS, ONE STEP AT A TIME</p><h2>Farm technology for beginners</h2></div>
+              <span class="section-note">Start with a real farm need, not an expensive gadget</span>
+            </div>
+            <div class="technology-panel">
+              <div class="technology-intro">
+                <div>
+                  <h3>Technology can help you make better-informed decisions.</h3>
+                  <p>Some tools are as simple as a soil test or a weather message. Others need equipment, training, good connectivity, or specialist support. Choose what solves a problem on your farm.</p>
+                </div>
+                <span class="technology-level"><span class="status-dot"></span>Beginner-friendly guide</span>
+              </div>
+              <div class="technology-grid">
+                <article class="technology-card">
+                  <span class="technology-number">01</span>
+                  <span class="technology-card-icon soil-tech-icon" aria-hidden="true">▤</span>
+                  <h3>Soil testing</h3>
+                  <p>Get soil pH and nutrient information to guide crop and fertilizer discussions.</p>
+                  <div class="technology-first-step"><strong>Try this first</strong><span>Ask a local agriculture office or soil lab how to collect a representative sample.</span></div>
+                  <span class="technology-cost">Usually a low-cost starting point; test interpretation may need local help.</span>
+                </article>
+                <article class="technology-card">
+                  <span class="technology-number">02</span>
+                  <span class="technology-card-icon weather-tech-icon" aria-hidden="true">☼</span>
+                  <h3>Weather forecasts &amp; alerts</h3>
+                  <p>Use local forecasts to plan field work and watch for heat, heavy rain, or dry spells.</p>
+                  <div class="technology-first-step"><strong>Try this first</strong><span>Save an official local weather source and compare forecasts with conditions on your farm.</span></div>
+                  <span class="technology-cost">A phone may be enough; forecasts can change and are not field guarantees.</span>
+                </article>
+                <article class="technology-card">
+                  <span class="technology-number">03</span>
+                  <span class="technology-card-icon water-tech-icon" aria-hidden="true">≈</span>
+                  <h3>Drip &amp; efficient irrigation</h3>
+                  <p>Well-designed systems can target water delivery and make scheduling easier to manage.</p>
+                  <div class="technology-first-step"><strong>Try this first</strong><span>Compare a small plot or demonstration with your current method; check water quality, filters, and maintenance.</span></div>
+                  <span class="technology-cost">Equipment and installation cost vary. Check local water permissions before installing.</span>
+                </article>
+                <article class="technology-card">
+                  <span class="technology-number">04</span>
+                  <span class="technology-card-icon records-tech-icon" aria-hidden="true">▣</span>
+                  <h3>Digital farm records</h3>
+                  <p>Record planting dates, expenses, rainfall, irrigation, inputs, and harvest results.</p>
+                  <div class="technology-first-step"><strong>Try this first</strong><span>Use a notebook or phone spreadsheet and track one crop for a season.</span></div>
+                  <span class="technology-cost">Can start free. Keep records private and back up important information.</span>
+                </article>
+                <article class="technology-card">
+                  <span class="technology-number">05</span>
+                  <span class="technology-card-icon machine-tech-icon" aria-hidden="true">⚙</span>
+                  <h3>Mechanization &amp; shared services</h3>
+                  <p>Tools and machinery can reduce repetitive labor when they fit the task and farm size.</p>
+                  <div class="technology-first-step"><strong>Try this first</strong><span>Ask about local rental, cooperatives, or custom-hiring services before buying equipment.</span></div>
+                  <span class="technology-cost">Compare the full cost, operator training, safety, repairs, and availability.</span>
+                </article>
+                <article class="technology-card">
+                  <span class="technology-number">06</span>
+                  <span class="technology-card-icon advanced-tech-icon" aria-hidden="true">⌖</span>
+                  <h3>Drones, sensors &amp; AI</h3>
+                  <p>Advanced tools may help survey fields or flag patterns, but their results need interpretation.</p>
+                  <div class="technology-first-step"><strong>Try this first</strong><span>Attend a local demonstration and ask what the tool can and cannot measure for your crop.</span></div>
+                  <span class="technology-cost">May require training, connectivity, permissions, and paid services. Verify findings in the field.</span>
+                </article>
+              </div>
+              <div class="technology-roadmap">
+                <span class="roadmap-icon" aria-hidden="true">↗</span>
+                <div><strong>A sensible way to get started</strong><p>Choose one farm problem → try one affordable tool on a small area → record cost and results → ask a local advisor → expand only if it works for you.</p></div>
+              </div>
+              <p class="fine-print technology-note">Tool availability, costs, data coverage, permissions, and support differ by location. Ask your local agriculture office or Kisan Call Center about schemes, demonstrations, and trusted services in your area.</p>
+            </div>
+          </section>
+
+          <section class="workspace-section" id="harvest">
+            <div class="section-heading compact-heading">
+              <div><p class="eyebrow">PLAN AHEAD, CHECK OFTEN</p><h2>Estimate your harvest window</h2></div>
+              <span class="section-note">Nature doesn’t follow an exact calendar</span>
+            </div>
+            <form id="harvest-form" class="harvest-panel">
+              <div class="harvest-intro">
+                <span class="large-tool-icon harvest-icon" aria-hidden="true">◷</span>
+                <div><h3>When did you plant?</h3><p>Get a broad estimate and a reminder to check crop maturity in the field.</p></div>
+              </div>
+              <div class="harvest-inputs">
+                <label>Crop
+                  <select name="crop" required>
+                    <option value="">Choose a crop</option>
+                    <option value="rice">Rice</option><option value="maize">Maize</option><option value="tomato">Tomato</option><option value="beans">Beans</option><option value="wheat">Wheat</option><option value="potato">Potato</option>
+                  </select>
+                </label>
+                <label>Planting date<input name="plantingDate" type="date" required /></label>
+                <button class="button button-dark" type="submit">Estimate harvest <span aria-hidden="true">→</span></button>
+              </div>
+              <div id="harvest-result" class="result-box harvest-result" aria-live="polite"></div>
+              <p class="fine-print">Estimates are broad example ranges; variety, climate, planting method, and growing conditions can change maturity considerably. Check crop-specific signs in your field.</p>
+            </form>
+          </section>
+
+          <footer class="page-footer">
+            <span><span class="footer-leaf">✳</span> fieldnote <span class="footer-dot">·</span> A growing companion for your farm</span>
+            <button type="button" data-open-expert>Need a hand? Talk to an agriculture expert <span aria-hidden="true">→</span></button>
+          </footer>
+        </div>
+      </main>
+    </div>
+
+    <dialog id="expert-dialog" class="expert-dialog" aria-labelledby="expert-title">
+      <form method="dialog"><button class="dialog-close" aria-label="Close">×</button></form>
+      <span class="dialog-icon" aria-hidden="true">♡</span>
+      <p class="eyebrow">LOCAL KNOWLEDGE MATTERS</p>
+      <h2 id="expert-title">Let’s find you the right help.</h2>
+      <p class="dialog-copy">Agriculture helplines and extension services differ by location. Tell us where you farm, and what you need help with, so this prototype can prepare your enquiry.</p>
+      <form id="expert-form" class="expert-form">
+        <label>Your area<input name="area" type="text" placeholder="District, region, or nearest town" required /></label>
+        <label>What would you like help with?
+          <select name="topic" required>
+            <option value="">Choose a topic</option><option>Choosing a crop or testing soil</option><option>Identifying a plant problem</option><option>Choosing a safe treatment</option><option>Water and irrigation</option><option>Harvest timing</option><option>Something else</option>
+          </select>
+        </label>
+        <button class="button button-dark full-button" type="submit">Prepare my enquiry <span aria-hidden="true">→</span></button>
+      </form>
+      <p class="dialog-note">This demo does not place a call or send your information. A live service needs a verified local helpline directory and secure contact integration.</p>
+      <p id="expert-status" class="inline-status" aria-live="polite"></p>
+    </dialog>
+    <div id="dialog-backdrop" class="dialog-backdrop" hidden></div>
+  </body>
+</html>
