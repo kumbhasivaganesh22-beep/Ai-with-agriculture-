@@ -1,12 +1,31 @@
-# Fieldnote
+# 🌾 Fieldnote
+website URl : https://ai-with-agriculture-delta.vercel.app/
 
-Fieldnote is a beginner-friendly agriculture guide built with plain HTML, CSS, and JavaScript. It has no package dependencies or build step. The deployable site and its local images are in `public/`.
+> A beginner-friendly, zero-dependency agriculture guide built with pure HTML, CSS, and JavaScript.
 
-## Deploy with Vercel
+---
 
-1. Import `kumbhasivaganesh22-beep/Ai-with-agriculture-` from the Vercel dashboard.
-2. Use the **Other** framework preset and the repository root as the project root.
-3. Leave the Build Command empty. `vercel.json` sets the output directory to `public`.
-4. Deploy. Vercel can then create preview deployments for pushes and a production deployment from the configured production branch.
+## 📌 About the Project
 
-The site is static and does not need environment variables, a backend, or a build command. The plant-photo workflow is a local preview and does not upload or analyze images.
+**Fieldnote** is a clean and lightweight web tool designed to serve as an accessible agriculture guide. Built using plain web fundamentals (HTML, CSS, and JS), it has no heavy build tools, external frameworks, or package dependencies—ensuring instant load times, zero configuration overhead, and high readability.
+
+---
+
+## ✨ Features
+
+* **Zero Dependencies:** Pure HTML5, CSS3, and JavaScript—no `npm install` needed.
+* **Lightweight & Fast:** Immediate client-side rendering with low resource usage.
+* **Vercel Ready:** Fully configured with `vercel.json` for one-click instant deployment.
+* **Responsive Layout:** Simple, clean UI structured for easy navigation.
+
+---
+
+## 📁 Repository Structure
+
+```text
+ai-with-agriculture/
+├── public/          # Static assets, images, and core content files
+├── .gitattributes   # Git configuration settings
+├── .gitignore       # Untracked files list
+├── vercel.json      # Vercel deployment & routing configuration
+└── README.md        # Project documentation
